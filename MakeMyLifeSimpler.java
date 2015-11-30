@@ -31,7 +31,7 @@ public class MakeMyLifeSimpler {
          
            newName.append(Character.toLowerCase(name.charAt(i)));
          if(name.charAt(i) == '_'){
-           newName.append(name.charAt(i+1));
+           newName.append(Character.toUpperCase(name.charAt(i+1)));
            i++;
          }
          i++;
