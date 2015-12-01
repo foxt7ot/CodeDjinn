@@ -14,7 +14,7 @@ import java.io.RandomAccessFile;
  * @version $Revision$
  */
 public class MakeMyLifeSimpler {
-  
+
   public static void main(String gg[]){
     try{
       File file = new File("../mrs_pos/src/mrs/pos/Abc.txt");
@@ -24,11 +24,11 @@ public class MakeMyLifeSimpler {
       String status = "property";
       while(raf.getFilePointer()<raf.length()){
         String name = raf.readLine();
-        
+
         StringBuilder newName= new StringBuilder();
        int i=0;
        while(i<name.length()){
-         
+
            newName.append(Character.toLowerCase(name.charAt(i)));
          if(name.charAt(i) == '_'){
            newName.append(Character.toUpperCase(name.charAt(i+1)));
@@ -64,27 +64,6 @@ public class MakeMyLifeSimpler {
     }catch(Throwable t){
       System.out.println(t);
     }
-    
-    
-    /*String name = "ABC_DEF_Gh";
-    
-    StringBuilder newName= new StringBuilder();
-    boolean foundUnderScore = false;
-   int i=0;
-   while(i<name.length()){
-     
-       newName.append(Character.toLowerCase(name.charAt(i)));
-     if(name.charAt(i) == '_'){
-       newName.append(name.charAt(i+1));
-       i++;
-     }
-     i++;
-   }
-   String propertyName = newName.toString().replace("_", "");
-   String propertyNameForGetterSetter = propertyName.substring(0, 1).toUpperCase() + propertyName.substring(1);*/
-   /*System.out.println(getPropertyName(propertyName));
-   System.out.println(getSetter(propertyNameForGetterSetter, propertyName, name));
-   System.out.println(getGetter(propertyNameForGetterSetter, propertyName));*/
   }
   public static String getSetter(String propertyNameForGetterSetter, String propertyName, String name){
     StringBuilder setterString = new StringBuilder();
@@ -98,7 +77,7 @@ public class MakeMyLifeSimpler {
     setterString.append("}");
     return setterString.toString();
   }
-  
+
   public static String getGetter(String propertyNameForGetterSetter, String propertyName){
     StringBuilder getterString = new StringBuilder();
     getterString.append("\n");
@@ -107,7 +86,7 @@ public class MakeMyLifeSimpler {
     getterString.append("}");
     return getterString.toString();
   }
-  
+
   public static String getPropertyName(String propertyName){
     return "private String "+propertyName+";";
   }
