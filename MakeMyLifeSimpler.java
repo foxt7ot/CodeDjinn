@@ -1,13 +1,10 @@
 //$Id$
-package mrs.pos;
-
 import java.io.File;
 import java.io.RandomAccessFile;
 
 /**
  * DESCRIPTION GOES HERE<br>
  * <br>
- * Copyright (c) 2015 MICROS Retail
  *
  * @author yaseen
  * @created Nov 30, 2015
@@ -17,8 +14,8 @@ public class MakeMyLifeSimpler {
 
   public static void main(String gg[]){
     try{
-      File file = new File("../mrs_pos/src/mrs/pos/Abc.txt");
-      File generatedFile = new File("../mrs_pos/src/mrs/pos/generated.data");
+      File file = new File("feed.data");
+      File generatedFile = new File("generated.data");
       RandomAccessFile generatedRandomAccessFile = new RandomAccessFile(generatedFile,"rw");
       RandomAccessFile raf = new RandomAccessFile(file, "r");
       String status = "property";
@@ -67,8 +64,6 @@ public class MakeMyLifeSimpler {
   }
   public static String getSetter(String propertyNameForGetterSetter, String propertyName, String name){
     StringBuilder setterString = new StringBuilder();
-    setterString.append("\n");
-    setterString.append("@XmlElement(name=\""+name+"\")");
     setterString.append("\n");
     setterString.append("public void set"+propertyNameForGetterSetter+"(String "+propertyName+"){");
     setterString.append("\n");
